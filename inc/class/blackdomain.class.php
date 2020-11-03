@@ -27,7 +27,6 @@
 
     // 判断网址是否是非法网址
     public function get_is_domain_black($url) {
-      $url = get_redirect_url($url);
       $domain = get_domain($url);
       $result = $this->db->query('blackdomains', "WHERE domain = '$domain'");
       (count($result) > 0) ? $opt = true : $opt = false;
