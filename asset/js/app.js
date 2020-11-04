@@ -1,53 +1,53 @@
 
-var APP = (function(){
+var APP = (function () {
 
   var fn = {
     // 生成短地址
-    setUrl: function(self) {
+    setUrl: function (self) {
       var urlEl = document.getElementById('url'),
-          tips = 'https://',
-          request = {
-            "url": urlEl.value
-          };
-      fn.getJson('api/set.php', true, JSON.stringify(request), function(res) {
-         if(res.success == true) {
+        tips = 'https://',
+        request = {
+          "url": urlEl.value
+        };
+      fn.getJson('api/shorten.php', true, JSON.stringify(request), function (res) {
+        if (res.success == true) {
           urlEl.className = 'focus';
-          urlEl.value = res.content.url;
-         } else {
+          urlEl.value = '';
+          document.getElementById("dwz").innerHTML = res.content.url;
+          document.getElementById("result").style.opacity = 1;
+        } else {
           urlEl.className = '';
           urlEl.value = '';
-          urlEl.setAttribute('placeholder', res.content);
-          setTimeout(function() {
-            urlEl.setAttribute('placeholder', tips);
-          }, 2000);
-         }
+          $toast(res.content);
+          urlEl.setAttribute('placeholder', tips);
+        }
       });
     },
-    
+
     // 获取 JSON 数据
-    getJson: function(url, post, data, callback) {
+    getJson: function (url, post, data, callback) {
       var xhr = new XMLHttpRequest(),
-          type = (post) ? 'POST' : 'GET';
-      xhr.onreadystatechange = function() {
-        if(xhr.readyState == 4 && xhr.status == 200) {
+        type = (post) ? 'POST' : 'GET';
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
           var json = JSON.parse(xhr.responseText);
           callback(json);
-        } else if(xhr.readyState == 4) {
+        } else if (xhr.readyState == 4) {
           callback(false);
         }
       }
       xhr.open(type, url, true);
       xhr.send(data);
     }
-    
+
   },
 
-  init = function() {
-    setTimeout(function() {
-      var el = document.getElementsByTagName('html')[0];
-      el.className = 'on';
-    }, 10);
-  };
+    init = function () {
+      setTimeout(function () {
+        var el = document.getElementsByTagName('html')[0];
+        el.className = 'on';
+      }, 10);
+    };
 
   return {
     fn: fn,
@@ -55,8 +55,6 @@ var APP = (function(){
   }
 
 })();
-
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   APP.init();
 })

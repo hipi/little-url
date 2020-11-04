@@ -2,7 +2,7 @@
   global $config;
   $config = [];
 
-  // 程序安装路径
+  // 短网址安装目录
   $config['path'] = '/';
   // ID 长度
   $config['length'] = 6;

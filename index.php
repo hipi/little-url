@@ -12,8 +12,5 @@
       exit;
     }
   }
-  
   include ("home.php");
-
 ?>
-
