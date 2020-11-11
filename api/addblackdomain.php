@@ -24,5 +24,5 @@
     } else {
         $opt['content'] = '调用参数不能为空。';
     }
-    echo json_encode($opt);
+    echo json_encode($opt,JSON_UNESCAPED_UNICODE);
 ?>

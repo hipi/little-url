@@ -9,7 +9,6 @@
   $opt['success'] = false;
 
   $request_arr = json_decode(file_get_contents('php://input'), true);
-
   $url = $request_arr['url'];
   
   if(isset($url)) {
@@ -34,8 +33,8 @@
       $opt['content'] = '请输入正确格式的网址.';
     }
   } else {
-    $opt['content'] = '调用参数不能为空.';
+    $opt['content'] = '请用POST请求，或调用参数不能为空';
   }
-  echo json_encode($opt);
+  echo json_encode($opt,JSON_UNESCAPED_UNICODE);
 
 ?>

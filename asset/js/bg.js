@@ -45,8 +45,8 @@ if (background.getContext) {
         clearTimeout;
 
     var setCanvasHeight = function () {
-        wWidth = document.body.clientWidth;
-        wHeight = document.body.clientHeight;
+        wWidth = document.documentElement.clientWidth;
+        wHeight = document.documentElement.clientHeight;
 
         canvas.forEach(function (nodelist) {
             nodelist.width = wWidth;

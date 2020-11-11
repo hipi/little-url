@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo get_title() ?></title>
     <meta
       name="keyword"
@@ -17,8 +18,8 @@
       type="image/x-icon"
       href="asset/images/favicon.ico"
     />
-    <link type="text/css" rel="stylesheet" href="asset/css/reset.css" />
-    <link type="text/css" rel="stylesheet" href="asset/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="asset/css/reset.css?v=1" />
+    <link type="text/css" rel="stylesheet" href="asset/css/main.css?v=1" />
   </head>
   <body id="app">
     <div id="bg">
@@ -67,8 +68,18 @@
         rights reserved.
       </div>
     </footer>
-    <script type="text/javascript" src="asset/js/bg.js"></script>
-    <script type="text/javascript" src="asset/js/toast.js"></script>
-    <script type="text/javascript" src="asset/js/app.js"></script>
+    <script type="text/javascript" src="asset/js/bg.js?v=1"></script>
+    <script type="text/javascript" src="asset/js/toast.js?v=1"></script>
+    <script type="text/javascript" src="asset/js/app.js?v=1"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?2ed3470fe5b09603c97db6c5c39d34ed";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
   </body>
 </html>
