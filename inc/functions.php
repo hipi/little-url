@@ -1,4 +1,10 @@
 <?php
+
+  // 获取网站标题
+  function get_version() {
+    global $config;
+    return $config['version'];
+  }
   // 获取网站标题
   function get_title() {
     global $config;

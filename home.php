@@ -18,8 +18,8 @@
       type="image/x-icon"
       href="asset/images/favicon.ico"
     />
-    <link type="text/css" rel="stylesheet" href="asset/css/reset.css?v=1" />
-    <link type="text/css" rel="stylesheet" href="asset/css/main.css?v=1" />
+    <link type="text/css" rel="stylesheet" href="asset/css/reset.css?v=<?php echo get_version() ?>" />
+    <link type="text/css" rel="stylesheet" href="asset/css/main.css?v=<?php echo get_version() ?>" />
   </head>
   <body id="app">
     <div id="bg">
@@ -49,8 +49,9 @@
           />
         </div>
         <div id="result">
-          <span class="label">短网址结果：</span>
-          <span id="dwz">asdasdasd</span>
+          <div class="label">短网址结果</div>
+          <a id="dwz" href="asdasdas">asdasdas</a>
+          <img id="qrcode" src="https://api.chenyeah.com/v1/qr?text=adasd" alt="">
         </div>
         <!-- <div class="prompt-wrap">
           asdasd
@@ -68,9 +69,9 @@
         rights reserved.
       </div>
     </footer>
-    <script type="text/javascript" src="asset/js/bg.js?v=1"></script>
-    <script type="text/javascript" src="asset/js/toast.js?v=1"></script>
-    <script type="text/javascript" src="asset/js/app.js?v=1"></script>
+    <script type="text/javascript" src="asset/js/bg.js?v=<?php echo get_version() ?>"></script>
+    <script type="text/javascript" src="asset/js/toast.js?v=<?php echo get_version() ?>"></script>
+    <script type="text/javascript" src="asset/js/app.js?v=<?php echo get_version() ?>"></script>
     <script>
         var _hmt = _hmt || [];
         (function() {

@@ -14,6 +14,8 @@ var APP = (function () {
           urlEl.className = 'focus';
           urlEl.value = '';
           document.getElementById("dwz").innerHTML = res.content.url;
+          document.getElementById("dwz").href = res.content.url;
+          document.getElementById("qrcode").src = `https://api.chenyeah.com/v1/qr?text=${res.content.url}`;
           document.getElementById("result").style.opacity = 1;
         } else {
           urlEl.className = '';
