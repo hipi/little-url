@@ -26,6 +26,7 @@
   flex-direction: column;
   background-size: cover;
   color: #fff;
+  letter-spacing: 1px;
 }
 #bg {
   position: fixed;
@@ -56,7 +57,7 @@ main .container {
   padding: 10px;
   width: 100%;
   border-radius: 4px;
-  margin-top: 16vh;
+  margin-top: 10vh;
 }
 main .title-wrap {
   margin-bottom: 30px;
@@ -77,11 +78,21 @@ main .container .link-area #url {
   flex: 1;
   height: 60px;
   border-radius: 2px 0 0 2px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: none;
   border-right: none;
   background: rgba(10, 10, 10, 0.17);
   padding: 0 20px;
+  box-shadow: 0px 1.6px 3.6px rgba(0, 0, 0, 0.13),
+    0px 0px 2.9px rgba(0, 0, 0, 0.11);
 }
+main .container .link-area #url::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+main .container .link-area #url::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+  opacity: 1;
+}
+
 main .container .link-area #submit {
   width: 120px;
   border-radius: 0 2px 2px 0;
@@ -89,10 +100,18 @@ main .container .link-area #submit {
   cursor: pointer;
   background-color: #2196f3;
   opacity: 0.8;
+  transition: all 0.3s;
 }
 main .container .link-area #submit:hover {
   opacity: 1;
 }
+
+@media (max-width: 768px) {
+  main .container .link-area #submit {
+    display: none;
+  }
+}
+
 main .container #result {
   margin-top: 20px;
   background: rgba(10, 10, 10, 0.17);
@@ -101,8 +120,8 @@ main .container #result {
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 0;
   transition: all 0.3s;
+  display: none;
 }
 main .container #result .label {
   font-size: 16px;
@@ -113,7 +132,6 @@ main .container #result #dwz {
   color: #6fff40;
   font-size: 16px;
   margin: 20px 0;
-  letter-spacing: 1px;
 }
 
 main .container .prompt-wrap {
@@ -131,4 +149,15 @@ footer {
   background: rgba(10, 10, 10, 0.17);
   padding: 10px;
   text-align: center;
+}
+footer .warn {
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  color: #ffc965;
+}
+
+footer .links a {
+  color: #ddd;
+  margin: 0 10px;
 }

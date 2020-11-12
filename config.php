@@ -2,7 +2,7 @@
   global $config;
   $config = [];
   
-  $config['version'] = 1.1;
+  $config['version'] = '1.0.2';
   // 短网址安装目录
   $config['path'] = '/';
   // ID 长度
