@@ -120,7 +120,7 @@ html {
   }
   
   a {
-    color: #1890ff;
+    color: #fff;
     text-decoration: none;
     background-color: transparent;
     outline: 0;
@@ -130,11 +130,11 @@ html {
   }
   
   a:hover {
-    color: #40a9ff
+    color: #fff
   }
   
   a:active {
-    color: #096dd9
+    color: #fff
   }
   
   a:active,a:hover {

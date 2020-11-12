@@ -24,7 +24,10 @@
     // 判断条件
     if($url != '' && !strstr($url, $_SERVER['HTTP_HOST']) && $is_link && !$is_black_domain) {
       $opt['success'] = true;
-      $opt['content']['url'] = $url_c->set_url($url, $config['length']);
+      $opt['content']['url'] = $url;
+      $short_url = $url_c->set_url($url, $config['length']);
+      $opt['content']['short_url'] = $short_url;
+      $opt['content']['qr_url'] = 'https://api.chenyeah.com/v1/qr?text='.$short_url;
     }else if($is_black_domain){
       $opt['content'] = '检测到该网址最终定向为非法网址.';
     } else if(strstr($url, $_SERVER['HTTP_HOST'])) {

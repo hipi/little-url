@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title><?php echo get_title() ?></title>
   <meta name="keyword" content="短链接,短网址,短连接,短网址生成,短链接生成,网址缩短,短地址,短链接生成器,缩短网址" />
   <meta name="description" content="免费提供短链接，在线短网址生成，短链接生成器，短网址，网址缩短服务，长链接转化短链接。安全快速跳转，永久有效、全网连通。" />
@@ -31,9 +31,20 @@
         <input id="submit" type="button" value="立即缩短" onclick="APP.fn.setUrl(this)" />
       </form>
       <div id="result">
-        <div class="label">短网址结果</div>
-        <a id="dwz" target="_blank" href=""></a>
+
+
         <img id="qrcode" src="https://api.chenyeah.com/v1/qr?text=adasd" alt="">
+        <div>
+          <div class="list dwz-container">
+            <span>短连接：</span>
+            <a id="dwz" target="_blank" href="">asdasdasdasdasdasdasd</a>
+            <div title="复制短连接：" class="copy-button" id="copy-url"></div>
+          </div>
+          <div class="list oldurl-container">
+            <span>原始链接：</span>
+            <a id="old-url" target="_blank" href="">asdasdasdasdasdasdasd</a>
+          </div>
+        </div>
       </div>
       <!-- <div class="prompt-wrap">
           asdasd
@@ -56,6 +67,7 @@
     </section>
   </footer>
   <script type="text/javascript" src="asset/js/bg.js?v=<?php echo get_version() ?>"></script>
+  <script type="text/javascript" src="asset/js/utils.js?v=<?php echo get_version() ?>"></script>
   <script type="text/javascript" src="asset/js/toast.js?v=<?php echo get_version() ?>"></script>
   <script type="text/javascript" src="asset/js/app.js?v=<?php echo get_version() ?>"></script>
   <script>
