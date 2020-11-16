@@ -9,8 +9,8 @@
     if(isset($request_arr['domain'])) {
       $domain = $request_arr['domain'];
         // 检测网址格式是否正确
-        $regex = '/^((http:\/\/)|(https:\/\/))?([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/';
-        $is_link = preg_match($regex, $domain);
+        $preg = "/^http[s]?:\/\/[\w.]+[\w\/]*[\w.]*\??[\w=&\+\%]*/is";
+        $is_link = preg_match($preg, $url);
         // 判断条件
 
         if(!$is_link){
